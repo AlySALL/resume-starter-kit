@@ -1,0 +1,1 @@
+console.log("JavaScript files are located in the js folder");
