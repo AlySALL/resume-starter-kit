@@ -82,12 +82,13 @@ Please refer to the detailed instructions below while typing the following comma
 Detailed instructions : https://code.visualstudio.com/docs/setup/linux
 
 ## Create working directory Code
-Please ensure you write all your code in the ~/Code folder
+Please ensure you write all your code in the ~/Code folder. Breath deep and take a snapshot.
 
     $ mkdir ~/Code
-    $ git clone this_repository.git
+    $ cd ~/Code
+    $ git clone this_repository.git # this_repository.git refers to your actual GitHub repository
     $ cd this_repository
-    $ docker-compose up -d
+    $ docker-compose up -d # if you encounter an error at this step, restart Ubuntu and try again
 
 Visit http://localhost:8080
 
@@ -128,7 +129,7 @@ Visit https://cesi-resume-yourforname.herokuapp.com
 ### Configuration
 
     git config --global user.email ID+username@users.noreply.github.com
-    git commit --amend --reset-author # to update last commit
+    git commit --amend --reset-author # to update last commit (only if you did one of course)
 
 Finding your commit email address : https://help.github.com/articles/about-commit-email-addresses/
 
@@ -143,8 +144,8 @@ Useful git commands :
     git add filename
     git commit -m "message"
     git commit --amend
-    git push origin master
     git pull origin master
+    git push origin master
 
 Detailled instructions : https://www.git-tower.com/blog/git-cheat-sheet/
 
@@ -164,16 +165,17 @@ Examples : https://seesparkbox.com/foundry/semantic_commit_messages
 
 Detailled instructions : https://conventionalcommits.org/
 
+#### Commit example
+    git add docker-compose.yml
+    git commit -m "chore: add docker-compose.yml file" -m "Create three services (mariadb, laravel and redis) and one volume (db_data). Type \"docker-compose up\" to start"
+    git push origin master 
+
 #### Initial commit example for a new project
     git init
     git add .
     git remote add origin https://github.com/username/repository.git
     git commit -m "chore : add initial code"
     git push -u origin master 
-
-#### Commit example for further ones
-    git commit -m "chore: add docker-compose.yml file" -m "Create three services (mariadb, laravel and redis) and one volume (db_data). Type \"docker-compose up\" to start"
-    git push origin master 
 
 ### Tag
 
