@@ -30,6 +30,13 @@ Copy the content of this file to your clipboard and paste it to GitHub Settings 
 
 Detailed instruction : https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
+### Turn on Git credential helper (if cloning repository using HTTPS)
+
+    $ git config --global credential.helper cache
+    $ git config --global credential.helper 'cache --timeout=3600'
+
+Detailed instruction : https://help.github.com/articles/caching-your-github-password-in-git/
+
 ## Install Docker CE
 Please refer to the detailed instructions below while typing the following commands.
 
