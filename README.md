@@ -64,6 +64,8 @@ Post-installation
     $ sudo usermod -aG docker $USER
     $ exit
 
+Log out and log back in so that your group membership is re-evaluated.
+
 Detailed instructions :
 https://docs.docker.com/install/linux/linux-postinstall/
 
