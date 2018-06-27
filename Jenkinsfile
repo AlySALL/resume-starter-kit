@@ -5,30 +5,7 @@ throttle(['throttleDocker']) {
         stage('Setup') {
           checkout scm
           sh '''
-            docker-compose down
-            docker-compose up -d --build
-            docker-compose logs -f &
-            pid=$!
-
-            for i in `seq 1 600`; do
-              # wait for containers to come up
-              sleep 1
-              # get a response from backend and frontend
-              curl localhost:8080 >/dev/null 2>&1
-              # exit if successful
-              if [ $? -eq 0 ]; then
-                kill $pid
-                wait $pid
-                echo "Docker container started"
-                exit 0
-              fi
-            done
-
-            # init script did not run
-            kill $pid
-            wait $pid
-            >&2 echo "Docker container did not start"
-            exit 1
+            ./setup.sh
           '''
         }
         stage('Capacity Test') {
