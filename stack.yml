@@ -7,5 +7,3 @@ services:
     image: ehemmerlin/resume
     ports:
       - 8080:80
-    volumes:
-      - .:/srv/app
