@@ -5,8 +5,7 @@ throttle(['throttleDocker']) {
         stage('Setup') {
           checkout scm
           sh '''
-            docker-compose down
-            docker-compose up -d --build
+            ./setup.sh
           '''
         }
         stage('Capacity Test') {
