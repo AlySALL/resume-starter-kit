@@ -22,7 +22,7 @@ throttle(['throttleDocker']) {
         stage('Deploy to Docker Swarm') {
           sh '''
             docker push ehemmerlin/resume
-            export DOCKER_HOST="tcp://46.101.112.188:2375"
+            export DOCKER_HOST="tcp://159.89.16.142:2375"
             docker stack deploy --with-registry-auth -c stack.yml resume
           '''
         }
